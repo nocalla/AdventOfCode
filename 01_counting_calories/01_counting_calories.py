@@ -17,7 +17,7 @@ df = pd.read_csv(
 print(df.head(20))
 print(df.shape)
 
-df_list = np.split(df, df[df.isnull().all(1)].index)
+df_list = np.split(df, df[df.isnull().all(1)].index)  # type: ignore
 
 combined_df = pd.concat(df_list, axis="columns", ignore_index=True)
 
