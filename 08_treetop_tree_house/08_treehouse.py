@@ -97,7 +97,7 @@ def get_scenic_score(
 
 def get_view_distance(height: int, view: list[int]) -> int:
     score = int()
-    
+
     for val in view:
         score += 1
         if val >= height:
