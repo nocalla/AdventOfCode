@@ -1,10 +1,12 @@
 from aocd.models import Puzzle
 
-date = [2022, 9]
-puzzle = Puzzle(year=date[0], day=date[1])
+DATE = [2022, 9]
 
+# get puzzle input
+puzzle = Puzzle(year=DATE[0], day=DATE[1])
+print(f"\nAdvent of Code {DATE[0]} Day {DATE[1]}: {puzzle.title}\n")
 input = puzzle.input_data
-print(input)
+#
 
 # submit answers
 # puzzle.answer_a = 0
