@@ -60,7 +60,7 @@ def get_follow_positions(h_positions):
             dir = get_dir(pos1=h_pos, pos2=t_pos)
             t_pos = move_cmd(start_pos=t_pos, dir=dir, steps=1)[-1]
             t_positions.append(t_pos)
-        # print(f"{t_pos}\t\t->\t\t{h_pos}\t\tdistance: {dist}\tdirection:{dir}")
+        # print(f"{t_pos}\t->\t\t{h_pos}\t\tdistance: {dist}\tdirection:{dir}")
     return t_positions
 
 
