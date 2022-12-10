@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 df = pd.read_csv(
-    "01_counting_calories\\input.txt",
+    r"2022\01_counting_calories\input.txt",
     header=None,
     names=["A"],
     low_memory=True,
