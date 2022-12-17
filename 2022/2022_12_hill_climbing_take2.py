@@ -1,7 +1,7 @@
 from collections import defaultdict
 from typing import Tuple
 
-from utilities import add_xy_coord, get_puzzle
+from ..utilities import add_xy_coord, get_puzzle
 
 DATE = [2022, 12]
 

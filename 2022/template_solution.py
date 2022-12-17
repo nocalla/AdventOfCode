@@ -1,4 +1,4 @@
-from utilities import get_puzzle
+from ..utilities import get_puzzle
 
 DATE = [2022, 12]
 puzzle = get_puzzle(year=DATE[0], day=DATE[1])

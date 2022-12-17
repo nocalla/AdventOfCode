@@ -1,6 +1,6 @@
 from ast import literal_eval
 
-from utilities import get_puzzle
+from ..utilities import get_puzzle
 
 DATE = [2022, 11]
 WORRY_REDUCTION = False  # set to True for Part A, False for Part B
