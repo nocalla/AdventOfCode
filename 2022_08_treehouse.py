@@ -1,4 +1,7 @@
+from utilities import get_puzzle
+
 INPUT_FILE = r"08_treetop_tree_house\input.txt"
+DATE = [2022, 8]
 
 
 def check_visibility(
@@ -105,12 +108,14 @@ def get_view_distance(height: int, view: list[int]) -> int:
     return score
 
 
+puzzle = get_puzzle(year=DATE[0], day=DATE[1])
+input = puzzle.input_data
+tree_rows = input.split("\n")[:-1]
+
 visible_trees = int()
 tree_rows = list()
 tree_map = str()
 scenic_scores = list()
-with open(INPUT_FILE, "r") as f:
-    tree_rows = f.read().split("\n")[:-1]
 
 for row_index, row in enumerate(tree_rows):
     tree_map += "\n"

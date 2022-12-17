@@ -1,4 +1,4 @@
-file = r"06_tuning_trouble\input.txt"
+file = r"2022_06_input.txt"
 MARKER_LENGTH = 14  # set to 4 for part 1 and 14 for part 2
 
 

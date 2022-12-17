@@ -1,4 +1,4 @@
-from aocd.models import Puzzle
+from utilities import get_puzzle
 
 DATE = [2022, 9]  # year, day
 
@@ -87,8 +87,7 @@ def get_follower_positions(
 
 
 # get puzzle input
-puzzle = Puzzle(year=DATE[0], day=DATE[1])
-print(f"\nAdvent of Code {DATE[0]} Day {DATE[1]}: {puzzle.title}\n")
+puzzle = get_puzzle(year=DATE[0], day=DATE[1])
 input = puzzle.input_data
 input_list = input.split("\n")
 #

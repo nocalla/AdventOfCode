@@ -1,6 +1,6 @@
 import re
 
-file = r"04_camp_cleanup\input.txt"
+file = r"2022_04_input.txt"
 
 
 def check_fully_contained(

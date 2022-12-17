@@ -25,7 +25,7 @@ matchups = {
 }
 
 df = pd.read_csv(
-    r"02_rock_paper_scissors\input.txt",
+    r"2022_02_input.txt",
     sep=" ",
     header=None,
     names=[

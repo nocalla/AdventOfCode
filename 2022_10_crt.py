@@ -1,4 +1,4 @@
-from aocd.models import Puzzle
+from utilities import get_puzzle
 
 DATE = [2022, 10]
 TARGET_CYCLES = [20, 60, 100, 140, 180, 220]
@@ -28,10 +28,9 @@ def draw_pixel(row_str, pixel, x_val):
 
 
 # get puzzle input
-puzzle = Puzzle(year=DATE[0], day=DATE[1])
-print(f"\nAdvent of Code {DATE[0]} Day {DATE[1]}: {puzzle.title}\n")
+puzzle = get_puzzle(year=DATE[0], day=DATE[1])
 input = puzzle.input_data.split("\n")
-#
+
 
 x_val = 1
 x_register = [x_val]

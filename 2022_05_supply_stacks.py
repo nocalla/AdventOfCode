@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-file = r"05_supply_stacks\input.txt"
+file = r"2022_05_input.txt"
 
 
 def cull_strings(source: str, chars: list) -> str:

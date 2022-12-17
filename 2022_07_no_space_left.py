@@ -1,4 +1,7 @@
-file = r"07_no_space_left_on_device\input.txt"
+from utilities import get_puzzle
+
+DATE = [2022, 7]
+
 PATH_SEPARATOR = "|"
 
 
@@ -51,32 +54,35 @@ def get_deleted_size(
     return dir_size
 
 
-with open(file, "r") as f:
-    dir_tree = {"|/": {"size": 0, "sub_directories": []}}
-    current_dir = ""
-    parent_dirs = list()
+puzzle = get_puzzle(year=DATE[0], day=DATE[1])
+input = puzzle.input_data
+input_list = input.split("\n")
 
-    for line in f:
-        line = line.replace("\n", "")
-        if line[0:4] == "$ cd":
-            current_dir = change_dir(cmd=line, path=current_dir)
-            parent_dirs = get_parent_dir_paths(current_dir)
+dir_tree = {"|/": {"size": 0, "sub_directories": []}}
+current_dir = ""
+parent_dirs = list()
 
-            # print(f"CWD: {current_dir}, {parent_dirs}")
+for line in input_list:
+    # line = line.replace("\n", "")
+    if line[0:4] == "$ cd":
+        current_dir = change_dir(cmd=line, path=current_dir)
+        parent_dirs = get_parent_dir_paths(current_dir)
 
-            if current_dir not in dir_tree:
-                dir_tree[current_dir] = {"size": 0, "sub_directories": []}
+        # print(f"CWD: {current_dir}, {parent_dirs}")
 
-        elif line[0:3] == "dir":
-            dir_tree[current_dir]["sub_directories"].append(
-                current_dir + PATH_SEPARATOR + line[4:]
-            )
-        elif line[0:4] != "$ ls":
-            filesize = get_filesize(line)
-            dir_tree[current_dir]["size"] += filesize
+        if current_dir not in dir_tree:
+            dir_tree[current_dir] = {"size": 0, "sub_directories": []}
 
-            for dir in parent_dirs:
-                dir_tree[dir]["size"] += filesize
+    elif line[0:3] == "dir":
+        dir_tree[current_dir]["sub_directories"].append(
+            current_dir + PATH_SEPARATOR + line[4:]
+        )
+    elif line[0:4] != "$ ls":
+        filesize = get_filesize(line)
+        dir_tree[current_dir]["size"] += filesize
+
+        for dir in parent_dirs:
+            dir_tree[dir]["size"] += filesize
 
 dir_sizes = list()
 for key in dir_tree:

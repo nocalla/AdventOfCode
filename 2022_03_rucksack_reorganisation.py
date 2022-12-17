@@ -1,4 +1,4 @@
-file = r"03_rucksack_reorganisation\input.txt"
+file = r"2022_03_input.txt"
 
 
 def check_line(s: str) -> int:
