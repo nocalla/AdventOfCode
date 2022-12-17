@@ -1,4 +1,4 @@
-from ..utilities import get_puzzle
+from utilities import get_puzzle
 
 DATE = [2022, 10]
 TARGET_CYCLES = [20, 60, 100, 140, 180, 220]

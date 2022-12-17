@@ -1,4 +1,4 @@
-from ..utilities import get_puzzle
+from utilities import get_puzzle
 
 INPUT_FILE = r"08_treetop_tree_house\input.txt"
 DATE = [2022, 8]
